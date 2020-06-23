@@ -39,7 +39,7 @@ stage('Docker deployment container run')
 steps
 	{
 		script{
-			docker.image('test-image').run('--name testimage-container -p 9010:8080')			
+			docker.image('test-image').run('--name testimaging-container -p 9004:8080')			
 		}
 	}
 }
