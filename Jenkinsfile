@@ -69,7 +69,7 @@ stage('Docker deployment container run')
 steps
 	{
 		script{
-			docker.image('test-image').withRun('-p 9004:8080'){
+			docker.image('test-image').withRun('--name dhirajamritraj -p 9004:8080'){
 			 echo "TEST"
 			}
 		}
