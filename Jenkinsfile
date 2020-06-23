@@ -29,12 +29,22 @@ stage('Docker Build Image')
 steps
 	{
 	script{
-		def customImage = docker.build("test-image", ".")
-		customImage.inside {
-				echo 'Image ${c.id} running'
+		docker.build("test-image", ".")
+		}
+	}
+}
+	
+stage('Docker deployment container run')
+{
+steps
+	{
+		script{
+			docker.image('test-image').run('--name testimg-container -p 9010:8080')
+			{
 			}
 		}
 	}
 }
+
 }
 }
