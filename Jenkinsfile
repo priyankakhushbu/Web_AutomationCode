@@ -30,21 +30,12 @@ steps
 	{
 	script{
 		def customImage = docker.build("test-image", ".")
-		}
-	}
-}
-	
-stage('Docker deployment container run')
-{
-steps
-	{
-		script{
-			customImage.inside {
+		customImage.inside {
 				echo 'Image ${c.id} running'
 			}
 		}
 	}
 }
+	
 
-}
 }
