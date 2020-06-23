@@ -69,7 +69,7 @@ stage('Docker deployment container run')
 steps
 	{
 		script{
-			docker.image('test-image').withRun('-d --name testimagecontainer -p 9005:8080'){
+			docker.image('test-image').withRun('-d --name testimgcontainer -p 9006:8080'){
 			 echo "TEST"
 			}
 		}
